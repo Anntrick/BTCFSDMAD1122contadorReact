@@ -1,16 +1,17 @@
-import { useState } from "react"
 import './Contador.scss'
+import { useState } from "react"
 
-const Contador = () => {
+const Contador = (props) => {
     //Inicializamos los valores del componente
-    const [ initialCant, setInitialCant ] = useState(0)
+    const [ initialCant, setInitialCant ] = useState(Number(props.initVal) || 0)
+
 
     const increment = () => {
-        setInitialCant(initialCant + 1) 
+        setInitialCant(initialCant + (Number(props.sum) || 1)) 
     }
 
-    const decrement = (cant) => {
-        setInitialCant(initialCant - cant)
+    const decrement = () => {
+        setInitialCant(initialCant - (Number(props.res) || 1))
     }
 
     return (
@@ -19,7 +20,7 @@ const Contador = () => {
             <button onClick={increment}>+</button> {/*con () se llama al cargar el componente*/}
             <h1>{initialCant}</h1>
             {/*  */}
-            <button onClick={()=> { decrement(3) }}>-</button>
+            <button onClick={()=> { decrement() }}>-</button>
         </div>
     )
 }
