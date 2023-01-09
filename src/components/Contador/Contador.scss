@@ -1,0 +1,15 @@
+@import "../../themes/colors.scss";
+@import "../../themes/sizes.scss";
+
+
+.Contador {
+    button {
+        width: 50px;
+        background-color: $primary;
+        color: white;
+        font-size: $titleSize;
+    }
+
+
+}
+
